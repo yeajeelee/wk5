@@ -47,3 +47,33 @@
 
   /* **** Student code starts here */
 
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: start;
+  gap: 10px
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 15px
+}
+
+.grid div:nth-child(even) img {
+  filter: grayscale(100%);
+  border: 25px solid black; 
+  box-sizing: border-box;   
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery img:hover {
+  filter: invert(75%);
+}
