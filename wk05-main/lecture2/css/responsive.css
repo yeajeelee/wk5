@@ -17,3 +17,79 @@
 }
 
 /* STUDENT CODE STARTS HERE */
+/* Tablet View */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 45% 45%;
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .grid > div:nth-child(3n) {
+    grid-column: 1/-1;
+    width: 50%
+  }
+
+  .gallery {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .gallery img {
+    flex: 1 1 30%
+  }
+}
+
+/* Desktop View */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+.grid > div:hover {
+  box-shadow: 0 4px 8px black;
+}
+
+  .gallery {
+    justify-content: space-between;
+  }
+
+  .gallery img {
+    flex: 1 1 200px;
+  }
+}
+
+/* Print View */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .gallery {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid > div {
+    border: 5px solid black;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery img:hover,
+  .grid > div:hover {
+    transform:none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: text;
+  }
+}
