@@ -40,10 +40,10 @@
   .gallery img {
     flex: 1 1 30%;
   }
-}
 
-.grid > div:nth-child(even) {
+  .grid > div:nth-child(even) {
   background-color: lightgreen;
+}
 }
 
 
@@ -58,7 +58,7 @@
   .grid > div:nth-child(3n) {
     grid-column: auto;
     width: inherit;  
-
+  }
 .grid > div:hover {
   box-shadow: 0 4px 8px black;
 }
@@ -71,6 +71,7 @@
     flex: 1 1 200px;
   }
 }
+  
 
 /* Print View */
 @media print {
