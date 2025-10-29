@@ -13,7 +13,8 @@
 .gallery img {
   flex-shrink: 1;
   flex-grow: 1;
-  flex-basis: 90%;  /* flex-basis practice */
+  flex-basis: 90%;
+  width: 100%  /* flex-basis practice */
 }
 
 /* STUDENT CODE STARTS HERE */
@@ -22,12 +23,13 @@
   .grid {
     grid-template-columns: 45% 45%;
     gap: 10px;
-    justify-items: center;
+    justify-content: center;
   }
 
   .grid > div:nth-child(3n) {
     grid-column: 1/-1;
-    width: 50%
+    justify-self: center;
+    width: auto;
   }
 
   .gallery {
@@ -36,15 +38,26 @@
   }
 
   .gallery img {
-    flex: 1 1 30%
+    flex: 1 1 30%;
   }
 }
+
+.grid > div:nth-child(even) {
+  background-color: lightgreen;
+}
+
+
 
 /* Desktop View */
 @media (min-width: 1200px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
   }
+
+  .grid > div:nth-child(3n) {
+    grid-column: auto;
+    width: inherit;  
 
 .grid > div:hover {
   box-shadow: 0 4px 8px black;
@@ -75,7 +88,8 @@
   }
 
   .grid > div {
-    border: 5px solid black;
+    border: 1px solid black;
+    page-break-inside: avoid;
   }
 }
 
@@ -84,12 +98,18 @@
   .grid > div:hover {
     transform:none;
     box-shadow: none;
+    filter: none
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: black;
-    color: text;
+    background: #111;
+    color: #eee;
+  }
+
+  .grid > div {
+    background: #111;
+    border: 1px solid #EB5B00;
   }
 }
